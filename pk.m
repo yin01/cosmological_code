@@ -14,8 +14,8 @@ tf_full = libpointer('singlePtr',zeros(1, numk));
 tf_baryon = libpointer('singlePtr',zeros(1, numk));
 tf_cdm = libpointer('singlePtr',zeros(1, numk));
 %loading shared library
-loadlibrary('wu_transfer.dylib','wu_transfer.h');
-calllib('wu_transfer','TFfit_hmpc',single(Omega_m), f_baryon, ...
+loadlibrary('hu_transfer.dylib','hu_transfer.h');
+calllib('hu_transfer','TFfit_hmpc',single(Omega_m), f_baryon, ...
     single(h), single(Tcmb), int32(numk), k, tf_full,tf_baryon,tf_cdm);
 
 tf_full.value;
